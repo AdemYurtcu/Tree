@@ -31,11 +31,11 @@ Binary search trees are a fundamental data structure used to construct more abst
 
 We begin by examining the root node. If the tree is null, the key we are searching for does not exist in the tree. Otherwise, if the key equals that of the root, the search is successful and we return the node. If the key is less than that of the root, we search the left subtree. Similarly, if the key is greater than that of the root, we search the right subtree. This process is repeated until the key is found or the remaining subtree is null. If the searched key is not found before a null subtree is reached, then the item must not be present in the tree. This is easily expressed as a recursive algorithm:</i>
 
- def search_recursively(key, node):</br>
-     if node is None or node.key == key:</br>
-        return node</br>
-    elif key < node.key:</br>
-         return search_recursively(key, node.left)</br>
-    else:  # key > node.key</br>
-         return search_recursively(key, node.right)</br>
-     return None</br>
+ &nbsp;def search_recursively(key, node):</br>
+    &nbsp;&nbsp; &nbsp;&nbsp;if node is None or node.key == key:</br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return node</br>
+    &nbsp;&nbsp;&nbsp;&nbsp;elif key < node.key:</br>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return search_recursively(key, node.left)</br>
+    &nbsp;&nbsp;&nbsp;&nbsp;else:  # key > node.key</br>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return search_recursively(key, node.right)</br>
+     &nbsp;&nbsp;&nbsp;&nbsp;return None</br>
