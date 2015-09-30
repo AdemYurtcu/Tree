@@ -57,3 +57,28 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+.classpath
+.gradle/2.2.1/taskArtifacts/cache.properties
+*.lock
+.gradle/2.2.1/taskArtifacts/fileSnapshots.bin
+*.bin
+.gradle/2.5/taskArtifacts/cache.properties
+*.project
+.settings/gradle/org.springsource.ide.eclipse.gradle.core.import.prefs
+*.prefs
+bin/org/gradle/resource.xml
+*.xml
+build/reports/tests/index.html
+*.css
+*.js
+build/reports/tests/classes/org.gradle.TreeTest.html
+*.html
+*.idx
+build/tmp/jar/MANIFEST.MF
+build/tmp/test/jar_extract_4820163178323379557_tmp
+build/tmp/test/jar_extract_5175875274247008264_tmp
+*.properties
+target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+*.lst
+target/surefire-reports/org.gradle.TreeTest.txt
+/build/
