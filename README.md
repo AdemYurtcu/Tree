@@ -20,3 +20,22 @@ Binary search trees are a fundamental data structure used to construct more abst
 <li>When inserting or searching for an element in binary search tree, the key of each visited node has to be compared with the key of the element to be inserted or found, i.e., it takes a long time to search an element in a binary search tree.</li>
 <li>The keys in the binary search tree may be long and the run time may increase.</li>
 <li>After a long intermixed sequence of random insertion and deletion, the expected height of the tree approaches square root of the number of keys, √n, which grows much faster than log n.</li></ol></i>
+
+<b><h3>Operations</h3></b>
+
+<i>Binary search trees support three main operations: insertion of keys, deletion of keys, and lookup (checking whether a key is present). Each requires a comparator, a subroutine that computes the total order (linear order) on any two keys. This comparator can be explicitly or implicitly defined, depending on the language in which the binary search tree was implemented. Comparators are usually less-than (<) or greater-than (>) functions: for instance, a < b or a > b, where a and b are keys of two nodes.<i>
+
+<b><h3>Searching</h3></b>
+
+<i>Searching a binary search tree for a specific key can be a recursive or an iterative process.
+
+We begin by examining the root node. If the tree is null, the key we are searching for does not exist in the tree. Otherwise, if the key equals that of the root, the search is successful and we return the node. If the key is less than that of the root, we search the left subtree. Similarly, if the key is greater than that of the root, we search the right subtree. This process is repeated until the key is found or the remaining subtree is null. If the searched key is not found before a null subtree is reached, then the item must not be present in the tree. This is easily expressed as a recursive algorithm:</i>
+
+ def search_recursively(key, node):</br>
+     if node is None or node.key == key:</br>
+        return node</br>
+    elif key < node.key:</br>
+         return search_recursively(key, node.left)</br>
+    else:  # key > node.key</br>
+         return search_recursively(key, node.right)</br>
+     return None</br>
