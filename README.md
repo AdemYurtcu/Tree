@@ -3,3 +3,6 @@
 <p align="justify">&emsp; Binary Search Tree(BST) is a computer science. BST somtimes called ordered or sorted binary trees. This is a particular type of contains: data structures that store items(such as integer, string and etc.) in memory. BST allows fast lookup,addition and removal of items, and can be used to implement either dynamic sets of items <p>
 
 <p align="justify">&emsp; BST supports tree main operations. This operations are insertion of items, deletion of items and lookup. Each operation requires a comprator. This comparator can be explicitly or implicitly defined, depending on the language in which the binary search tree was implemented. Comparators are usually less-than (<) or greater-than (>) functions.<p>
+<h3><b>Flowchart of Operations </b></h3>
+<ul><li><a href="https://drive.google.com/file/d/0B5Ec_5irxL8saFRrSE12LTljeHc/view?usp=sharing"> This is a flowchart of lookup operations <a></li>
+</ul>
