@@ -4,7 +4,7 @@
 
 <p align="justify">&emsp; BST supports tree main operations. This operations are insertion of items, deletion of items and lookup. Each operation requires a comprator. This comparator can be explicitly or implicitly defined, depending on the language in which the binary search tree was implemented. Comparators are usually less-than (<) or greater-than (>) functions.<p>
 <h3><b>Flowchart of Operations </b></h3>
-<ul><li><a href="https://drive.google.com/file/d/0B5Ec_5irxL8sXy1GWUpGdEVORTg/view?usp=sharing"> This is a flowchart of lookup operations <a></li>
+<ul><li><a href="https://drive.google.com/file/d/0B5Ec_5irxL8sXy1GWUpGdEVORTg/view?usp=sharing"> This is a flowchart for lookup operations <a></li>
 <li><a href="https://drive.google.com/file/d/0B5Ec_5irxL8selZEYk1hZXFsejA/view?usp=sharing"> This is a flowchart of additions operations <a>
 </li>
 </ul>
