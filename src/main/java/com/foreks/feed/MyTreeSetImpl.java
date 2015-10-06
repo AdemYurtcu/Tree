@@ -1,4 +1,4 @@
-package org.gradle;
+package com.foreks.feed;
 
 import java.util.ArrayList;
 import java.util.Comparator;

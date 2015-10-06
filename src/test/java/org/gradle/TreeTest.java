@@ -8,6 +8,9 @@ import java.util.Comparator;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.foreks.feed.MyTreeSet;
+import com.foreks.feed.MyTreeSetImpl;
+
 public class TreeTest {
     MyTreeSet<Integer> tree;
 
