@@ -83,87 +83,8 @@ public class MyTreeSetImpl<T> extends AbstractTreeSet<T> {
 
     @Override
     public boolean remove(final T value) {
-        boolean check = false;
-        MyTreeSetImpl<T> parent = null;
-        MyTreeSetImpl<T> t = this;
-        MyTreeSetImpl<T> replacement;
-        MyTreeSetImpl<T> replacementParent = null;
-        if (this.root == true) {
-            while (check != true && null != t) {
-                if (t.comparator.compare(value, t.getValue()) < 0) {
-                    parent = t;
-                    t = (MyTreeSetImpl<T>) t.getLeftChild();
-                } else if (t.comparator.compare(value, t.getValue()) > 0) {
-                    parent = t;
-                    t = (MyTreeSetImpl<T>) t.getRightChild();
-                } else {
-                    check = true;
-                }
-            }
-            if (check == true) {
-                if (null == (MyTreeSetImpl<T>) t.getLeftChild() && null == (MyTreeSetImpl<T>) t.getRightChild()) {
-                    if (null != parent) {
-                        if (t.comparator.compare(t.getValue(), parent.getValue()) < 0) {
-                            parent.setLeftChild(null);
-                        } else {
-                            parent.setRightChild(null);
-                        }
-                    } else {
-                        this.root = false;
-                    }
-
-                    return true;
-                }
-                if (null != t.getLeftChild() && null != t.getRightChild()) {
-                    replacement = (MyTreeSetImpl<T>) t.getLeftChild();
-
-                    while (null != replacement.getRightChild()) {
-                        replacementParent = replacement;
-                        replacement = (MyTreeSetImpl<T>) replacement.getRightChild();
-                    }
-                    if (null != replacementParent) {
-                        replacementParent.setRightChild(replacement.getLeftChild());
-                        replacement.setRightChild(t.getRightChild());
-                        replacement.setLeftChild(t.getLeftChild());
-
-                    } else {
-
-                        replacement.setRightChild(t.getRightChild());
-
-                    }
-
-                    if (null != parent) {
-                        parent.setLeftChild(replacement);
-                    } else {
-                        this.setValue(replacement.getValue());
-                        this.setLeftChild(replacement.getLeftChild());
-                        this.setRightChild(replacement.getRightChild());
-                    }
-                    return true;
-                } else {
-                    if (null != t.getLeftChild()) {
-                        if (null != parent) {
-                            parent.setLeftChild(t.getLeftChild());
-                        } else {
-                            this.setValue(this.getLeftChild().getValue());
-                            this.setLeftChild(this.getLeftChild().getLeftChild());
-                        }
-                        return true;
-                    }
-                    if (null != t.getRightChild()) {
-                        if (null != parent) {
-                            parent.setRightChild(t.getRightChild());
-                        } else {
-                            this.setValue(this.getRightChild().getValue());
-                            this.setRightChild(this.getRightChild().getRightChild());
-                        }
-                        return true;
-                    }
-                }
-
-            }
-        }
-        return false;
+        final DeleteNode<T> del = new DeleteNode<T>();
+        return del.deleteNode(this, value);
     }
 
     @Override
