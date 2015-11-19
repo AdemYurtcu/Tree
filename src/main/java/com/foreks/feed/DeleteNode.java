@@ -25,6 +25,8 @@ public class DeleteNode<T> {
                 return true;
             }
             if (null != node.getLeftChild() && null != node.getRightChild()) {
+                this.right = false;
+                this.left = false;
                 node.setValue(minNodeValue(node));
                 return true;
             }
