@@ -24,9 +24,7 @@ public class TreeTest {
         assertTrue("agac 10 icermiyor", this.tree.contains(10));
         assertTrue("10 silinmedi", this.tree.remove(10));
         assertFalse("agacta hala 10 var", this.tree.contains(10));
-        assertTrue("agac 20 icermiyor", this.tree.contains(20));
-        assertTrue("20 silinemedi", this.tree.remove(20));
-        assertFalse("a�a�ta hala 20 var", this.tree.contains(20));
+
     }
 
     public void addStringElements() {
@@ -39,7 +37,11 @@ public class TreeTest {
     private void addSampleElements() {
         this.tree.add(10);
         this.tree.add(20);
-        this.tree.add(5);
+        this.tree.add(22);
+        this.tree.add(15);
+        this.tree.add(18);
+        this.tree.add(51);
+        this.tree.add(9);
     }
 
 }

@@ -29,15 +29,34 @@ public class DeleteNode<T> {
                 return true;
             }
             if (node.getLeftChild() != null) {
-                this.parent.setLeftChild(node.getLeftChild());
-                node = this.changeNode;
-                return true;
+                if (this.parent != null) {
+                    if (this.left == true) {
+                        this.parent.setLeftChild(node.getLeftChild());
+                    } else {
+                        this.parent.setRightChild(node.getLeftChild());
+                    }
+                    return true;
+                } else {
+                    node.setValue(node.getLeftChild().getValue());
+                    node.setLeftChild(this.changeNode);
+                    return true;
+                }
 
             }
             if (node.getRightChild() != null) {
-                this.parent.setRightChild(node.getRightChild());
-                node = this.changeNode;
-                return true;
+                if (this.parent != null) {
+                    if (this.right == true) {
+                        this.parent.setRightChild(node.getRightChild());
+                    } else {
+                        this.parent.setLeftChild(node.getRightChild());
+                    }
+                    return true;
+                } else {
+                    node.setValue(node.getRightChild().getValue());
+                    node.setRightChild(this.changeNode);
+                    return true;
+                }
+
             }
         }
         this.parent = node;
@@ -54,26 +73,34 @@ public class DeleteNode<T> {
         return false;
     }
 
-    private T minNodeValue(MyTreeSet<T> node) {
-        if (node.getLeftChild() == null && node.getRightChild() == null) {
+    private T minNodeValue(final MyTreeSet<T> node) {
+        if (node.getLeftChild() == null) {
             final T value = node.getValue();
-            if (this.replecementParent != null) {
-                this.replecementParent.setLeftChild(this.changeNode);
+            if (node.getRightChild() != null) {
+                if (this.left == false) {
+                    this.replecementParent.setRightChild(node.getRightChild());
+                    return value;
+                } else {
+                    this.replecementParent.setLeftChild(node.getRightChild());
+                    return value;
+                }
             } else {
-                node = this.changeNode;
+                if (this.left == false) {
+                    this.replecementParent.setRightChild(this.changeNode);
+                    return value;
+                } else {
+                    this.replecementParent.setLeftChild(this.changeNode);
+                    return value;
+                }
             }
-            return value;
-        }
-        if (node.getLeftChild() == null && node.getRightChild() != null) {
-            final T value = node.getValue();
-            if (this.replecementParent != null) {
-                this.replecementParent.setLeftChild(node.getRightChild());
-            } else {
-                node = node.getRightChild();
-            }
-            return value;
         }
         this.replecementParent = (MyTreeSetImpl<T>) node;
-        return minNodeValue(node.getLeftChild());
+        if (this.right == false) {
+            this.right = true;
+            return minNodeValue(node.getRightChild());
+        } else {
+            this.left = true;
+            return minNodeValue(node.getLeftChild());
+        }
     }
 }
