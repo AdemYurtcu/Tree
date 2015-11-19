@@ -6,8 +6,8 @@ public class DeleteNode<T> {
     MyTreeSetImpl<T> replecementParent = null;
     boolean          right             = false, left = false;
 
-    public boolean deleteNode(MyTreeSetImpl<T> node, final T value) {
-        if (node == null) {
+    public boolean deleteNode(final MyTreeSetImpl<T> node, final T value) {
+        if (node.getRoot() == false) {
             return false;
         }
         if (node.comparator.compare(node.getValue(), value) == 0) {
@@ -20,7 +20,7 @@ public class DeleteNode<T> {
                     }
 
                 } else {
-                    node = this.changeNode;
+                    node.setRoot(false);
                 }
                 return true;
             }

@@ -36,12 +36,7 @@ public class TreeTest {
 
     private void addSampleElements() {
         this.tree.add(10);
-        this.tree.add(20);
-        this.tree.add(22);
-        this.tree.add(15);
-        this.tree.add(18);
-        this.tree.add(51);
-        this.tree.add(9);
+
     }
 
 }
